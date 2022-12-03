@@ -49,3 +49,4 @@ out/
 ### Data DB ###
 .MySql/
 .PostgresSql/
+!gradle/wrapper/gradle-wrapper.jar
