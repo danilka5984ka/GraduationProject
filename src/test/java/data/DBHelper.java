@@ -9,10 +9,6 @@ import java.sql.DriverManager;
 
 public class DBHelper {
 
-    private static String url = System.getProperty("db.url");
-    private static String user = System.getProperty("db.user");
-    private static String password = System.getProperty("db.password");
-
     @SneakyThrows
     public static void clearDB() {
         val deletePayment = "DELETE FROM payment_entity;";

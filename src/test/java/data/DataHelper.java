@@ -21,11 +21,11 @@ public class DataHelper {
     private static final Faker fakerEng = new Faker(Locale.ENGLISH, new RandomService());
     private static final Faker fakerRu = new Faker(new Locale("ru", "RU"), new RandomService());
 
-    public static String getApprovedNumber() {
+    public static String getFirstNumber() {
         return "4444 4444 4444 4441";
     }
 
-    public static String getDeclinedNumber() {
+    public static String getSecondNumber() {
         return "4444 4444 4444 4442";
     }
 
