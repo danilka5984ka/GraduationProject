@@ -53,6 +53,7 @@ public class CreditPaymentTest {
         tourPage.continueClick();
         Assertions.assertAll(
                 () -> tourPage.denialAssertion(),
+                () -> tourPage.creditDeclinedStatusAssertion(),
                 () -> tourPage.payDenialCountAssertion(),
                 () -> tourPage.orderDenialCountAssertion()
         );

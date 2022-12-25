@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Selenide.$x;
 
 public class AppPage {
 
+
     HomePage homePage = new HomePage();
 
     private final SelenideElement continueButton = $x("//*[@id='root']/div/form/fieldset/div[4]/button");
@@ -59,16 +60,6 @@ public class AppPage {
         cardCVC.setValue(cvc);
     }
 
-    public ArrayList<String> getForm() {
-        ArrayList<String> form = new ArrayList<>();
-        form.add(cardNumber.getValue());
-        form.add(cardMonth.getValue());
-        form.add(cardYear.getValue());
-        form.add(cardHolder.getValue());
-        form.add(cardCVC.getValue());
-        return form;
-    }
-
     public void continueClick() {
         continueButton.click();
     }
@@ -91,7 +82,7 @@ public class AppPage {
         monthFieldError.shouldBe(Condition.text("Неверный формат"), visible);
     }
 
-    public void     monthFieldPeriodError() {
+    public void monthFieldPeriodError() {
         monthFieldError.shouldBe(Condition.text("Неверно указан срок действия карты"), Condition.visible);
     }
 
@@ -100,10 +91,6 @@ public class AppPage {
     }
 
     public void yearFieldMinusPeriodError() {
-        yearFieldError.shouldBe(Condition.text("Истёк срок действия карты"), visible);
-    }
-
-    public void yearFieldPlusPeriodError() {
         yearFieldError.shouldBe(Condition.text("Истёк срок действия карты"), visible);
     }
 
