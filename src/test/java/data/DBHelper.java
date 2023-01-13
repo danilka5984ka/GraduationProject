@@ -90,7 +90,6 @@ public class DBHelper {
 
         try (
                 val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
-
         ) {
             orderCount = runner.query(conn, sql, new ScalarHandler<>());
         }
