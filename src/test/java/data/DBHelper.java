@@ -17,7 +17,8 @@ public class DBHelper {
         val runner = new QueryRunner();
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             runner.update(conn, deletePayment);
             runner.update(conn, deleteCredit);
@@ -32,7 +33,8 @@ public class DBHelper {
         String payStatus;
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             payStatus = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -46,7 +48,8 @@ public class DBHelper {
         String creditStatus;
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             creditStatus = runner.query(conn, status, new ScalarHandler<>());
         }
@@ -61,7 +64,8 @@ public class DBHelper {
         long payCount;
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             payCount = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -75,7 +79,8 @@ public class DBHelper {
         long creditCount;
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             creditCount = runner.query(conn, sql, new ScalarHandler<>());
         }
@@ -89,11 +94,11 @@ public class DBHelper {
         long orderCount;
 
         try (
-                val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/app", "app", "pass")
+                val conn = DriverManager.getConnection(System.getProperty("db.url"), System.getProperty("db.user"),
+                        System.getProperty("db.password"))
         ) {
             orderCount = runner.query(conn, sql, new ScalarHandler<>());
         }
         return orderCount;
     }
 }
-

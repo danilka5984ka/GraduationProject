@@ -6,7 +6,6 @@ import data.DBHelper;
 import org.junit.jupiter.api.Assertions;
 
 import java.time.Duration;
-import java.util.ArrayList;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
